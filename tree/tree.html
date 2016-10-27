@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>tree</title>
+    <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.css" rel="stylesheet">
+    <style>
+        ul{
+            list-style: none;
+        }
+        ul li{
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <p id="treeOne"><i class="fa fa-plus"></i>谢花花</p>
+    <ul id="treeOneFold" style="display: block;">
+        <li><a href="#">test1</a></li>
+        <li><a href="#">test2</a></li>
+        <li><a href="#">test3</a></li>
+    </ul>
+    <p id="treeTwo"><i class="fa fa-plus"></i>谢花花</p>
+    <ul id="treeTwoFold" style="display: block;">
+        <li><a href="#">test1</a></li>
+        <li><a href="#">test2</a></li>
+        <li><a href="#">test3</a></li>
+    </ul>
+<script>
+    function $(id){
+        return document.getElementById(id);
+    }
+    var treeOne = $("treeOne");
+    var treeOneFold = $("treeOneFold");
+    var treeTwoFold = $("treeTwoFold");
+    var treeTwo = $("treeTwo");
+    var test = $("test");
+    var testFold = $("testFold");
+    function tree_fold(idClick,idFold){
+        idClick.onclick = function(){
+            if(idFold.style.display=="block"){
+                idFold.style.display="none";
+            }else{
+                idFold.style.display="block";
+            }
+        }
+    }
+    tree_fold(treeOne,treeOneFold);
+    tree_fold(treeTwo,treeTwoFold);
+</script>
+</body>
+</html>
