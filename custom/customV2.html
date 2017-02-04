@@ -1,0 +1,80 @@
+<html>
+<head>
+    <title>客服悬浮窗口</title>
+    <style type="text/css">
+        *{margin:0;padding:0;}
+        #box1{width:100px;height:160px;background:#82B2D2;position:fixed;top:100px;left:-100px;cursor:pointer;}
+        #box1 #box2{width:30px;height:160px;background:#448CBB;position:absolute;left:100px;border-radius:0 3px 3px 0;}
+        #box1 #box2 span{text-align:center;line-height:70px;display:block;padding:8px;font-size:16px;color:#fff;}
+    </style>
+</head>
+<body>
+<div id="box1">
+    <div id="box2"><span>客服</span></div>
+</div>
+</body>
+<script type="text/javascript">
+
+    /* Dom获取 */
+    function $(id){
+        return document.getElementById(id);
+    };
+
+    /* 样式获取 */
+    function getStyle(obj,attr){
+        return obj.currentStyle?obj.currentStyle[attr]:getComputedStyle(obj)[attr];
+    };
+
+    var box1 = $("box1");
+    box1.onmouseover = function(){
+        run(this,10,0);
+    };
+    box1.onmouseout = function(){
+        run(this,-10,-100);;
+    };
+
+    var timer = null;
+    /*
+     封装前
+     function startRun(obj){
+     clearInterval(timer);
+     timer = setInterval(function(){
+     var curLeft = parseInt(getStyle(obj,"left"));
+     if(curLeft!=0){
+     curLeft += 10;
+     obj.style.left = curLeft+"px";
+     }else {
+     clearInterval(timer);
+     }
+     },30);
+     };
+
+     function stopRun(obj){
+     clearInterval(timer);
+     timer = setInterval(function(){
+     var curLeft = parseInt(getStyle(obj,"left"));
+     if(curLeft!=100){
+     curLeft += -10;
+     obj.style.left = curLeft+"px";
+     }else {
+     clearInterval(timer);
+     }
+     },30);
+     };
+     */
+
+    /* 封装运动方法 */
+    function run(obj,speed,position){
+        clearInterval(timer);
+        timer = setInterval(function(){
+            var curLeft = parseInt(getStyle(obj,"left"));
+            if(curLeft!=position){
+                curLeft += speed;
+                obj.style.left = curLeft+"px";
+            }else {
+                clearInterval(timer);
+            }
+        },30);
+    };
+</script>
+</html>
