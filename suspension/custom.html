@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>custom service</title>
+    <script src="js/jquery-2.0.2.min.js"></script>
+</head>
+<style>
+    *{
+        margin:0;
+        padding:0;
+    }
+    body{
+        height:2000px;
+        background-color: skyblue;
+    }
+    #custom{
+        position: fixed;
+        top:50%;
+        right:0;
+        width: auto;
+        height:100px;
+        margin-top:-50px;
+    }
+    #customContent{
+        float: left;
+        width:0;
+        height:100px;
+        position: absolute;
+        top:50%;
+        right:0;
+        margin-top:-50px;
+        background-color: #82B2D2;
+        cursor:pointer;
+    }
+    #customTriggle{
+        float: left;
+        width: 30px;
+        height:100px;
+        position: absolute;
+        top:50%;
+        right:0;
+        margin-top:-50px;
+        background-color: #448CBB;
+        border-radius:4px 0px 0px 4px;
+        cursor:pointer;
+    }
+    
+    #custom p{
+        text-align:center;
+        color: #fff;
+        padding-top:10px;
+        font-size:16px;
+    }
+</style>
+<body>
+    <div id="custom">
+        <div id="customContent">
+            <img src="image/wechat.png" alt="扫码下载" width=100 height=100 style="float:left;">
+            <img src="image/wechat.png" alt="扫码下载" width=100 height=100 style="float:left;">
+        </div>
+        <div id="customTriggle">
+            <p>扫码下载</p>
+        </div>
+    </div>
+    <a href="suspension.html" target=_blank>方式一</a>
+    <script src="js/custom.js"></script>
+</body>
+</html>
