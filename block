@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    var taga,tagb;
+    taga = 'a';
+    tagb = 'b';
+    var target = [];
+    var arr = [];
+
+    var arrObj = {"data":[{a:11,b:21},{a:12,b:22},{a:13,b:23},{a:14,b:24},{a:15,b:25}]};
+    var tag = [taga,tagb];
+
+    for(var i = 0,tl=tag.length;i<tl;i++){
+        arr = [];
+        for(var j = 0,objl = arrObj.data.length;j<objl;j++){
+            arr[j] = arrObj.data[j][tag[i]];
+        }
+        target.push(arr);
+    }
+    console.log(target);
+
+    console.log(arrObj);
+    console.log(tag);
+</script>
+</body>
+</html>
